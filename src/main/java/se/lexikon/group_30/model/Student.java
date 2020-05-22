@@ -10,7 +10,7 @@ public class Student {
     private String name;
     private String email;
     private String address;
-    private Set<Course> courses;
+    private HashSet<Course> courses;
 
     public Student(int studentId, String name, String email, String address) {
         this.studentId = studentId;
@@ -48,13 +48,13 @@ public class Student {
         this.address = address;
     }
 
-    public Set<Course> getCourses() {
+    public HashSet<Course> getCourses() {
         if (this.courses == null)
             this.courses = new HashSet<>();
         return courses;
     }
 
-    public void setCourses(Set<Course> courses) {
+    public void setCourses(HashSet<Course> courses) {
         if (this.courses == null || this.courses.isEmpty()){
             this.courses = new HashSet<>();
             for (Course c : getCourses()){
@@ -79,11 +79,12 @@ public class Student {
                 addCourse((Course)c);
             }*/
 
-            this.courses.removeAll(getCourses());
+            //this.courses.removeAll(getCourses());  todo ask Erik why don't the remove and removeAll method work
+            this.courses.clear();
+
             for (Course c : courses){
                 addCourse(c);
             }
-
         }
     }
 
@@ -98,9 +99,8 @@ public class Student {
     }
 
     public void removeCourse(Course course) {
-
+        
         if (course != null){
-
             if (courses.remove(course)){
                 course.setStudents(null);
             }

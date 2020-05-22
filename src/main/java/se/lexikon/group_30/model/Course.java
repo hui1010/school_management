@@ -106,7 +106,6 @@ public class Course {
                 }
             }
         }
-
         return exist;
     }
 
@@ -114,6 +113,5 @@ public class Course {
         if (studentExist(student)){
             students.remove(student);
         }else throw new NoSuchElementException(student.getName() + " has not registered yet");
-
     }
 }

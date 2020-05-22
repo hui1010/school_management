@@ -62,17 +62,18 @@ public class StudentTest {
         assertEquals("växjö", stu1.getAddress());
 
         //try to set more courses for stu3
-        Set<Course> testCourses = new HashSet<>(0);
+        HashSet<Course> testCourses = new HashSet<>(0);
         testCourses.add(c1);
         testCourses.add(c2);
+
         stu3.setCourses(testCourses);
-        System.out.println(stu3.getCourses());
+
     }
 
     @Test
     public void test_removeCourse_method() {
         stu1.removeCourse(c1);
-        System.out.println(stu1.getCourses());
-        //assertEquals(2, stu1.getCourses().size());
+        // remove failed, really can't figure out why
+        assertEquals(2, stu1.getCourses().size());
     }
 }
