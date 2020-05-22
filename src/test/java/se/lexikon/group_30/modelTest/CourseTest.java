@@ -1,5 +1,6 @@
 package se.lexikon.group_30.modelTest;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import se.lexikon.group_30.model.Course;
@@ -20,7 +21,7 @@ public class CourseTest {
     private Student stu1 = new Student(1, "Tom", "tom@test.com", "växjö");
     private Student stu2 = new Student(2,"Jerry", "jerry@test.com", "växjö");
     private Student stu3 = new Student(3, "Elsa", "elsa@test.com", "kalmar");
-    Student stu4 = new Student(4, "Anna", "anna@test.com", "kalmar");
+    private Student stu4 = new Student(4, "Anna", "anna@test.com", "kalmar");
 
     HashSet<Student> students1 = new HashSet<>();
     HashSet<Student> students2 = new HashSet<>();
@@ -72,4 +73,6 @@ public class CourseTest {
         //see if I can remove student that doesn't exist
         c1.unregister(stu4);
     }
+
+
 }

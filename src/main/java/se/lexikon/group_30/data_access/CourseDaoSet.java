@@ -24,11 +24,11 @@ public class CourseDaoSet implements CourseDao {
         return COURSE_MANAGE;
     }
 
-    public static Set<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
-    public static void setCourses(Set<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         CourseDaoSet.courses = courses;
     }
 
@@ -92,6 +92,7 @@ public class CourseDaoSet implements CourseDao {
         return courses.remove(course);
     }
 
+    @Override
     public void clear(){
         this.courses = new HashSet<>();
     }

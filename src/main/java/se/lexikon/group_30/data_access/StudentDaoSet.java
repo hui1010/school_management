@@ -76,13 +76,11 @@ public class StudentDaoSet implements StudentDao{
 
     @Override
     public Set<Student> findAll() {
-
         return students;
     }
 
     @Override
     public boolean deleteStudent(Student student) {
-
         return students.remove(student);
     }
 

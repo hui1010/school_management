@@ -1,9 +1,6 @@
 package se.lexikon.group_30.model;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Student {
     private int studentId;
@@ -99,12 +96,29 @@ public class Student {
     }
 
     public void removeCourse(Course course) {
-        
-        if (course != null){
+        if (courseExist(course)){
+            courses.remove(course);
+            course.setStudents(null);
+        }else throw new NoSuchElementException(course.getCourseName() + " is not a valid course.");
+
+        /*if (course != null){
             if (courses.remove(course)){
                 course.setStudents(null);
             }
+        }*/
+    }
+
+    private boolean courseExist(Course course) {
+        boolean exist = false;
+        if (courses.size() != 0) {
+            for (Object c : courses){
+                if (c.equals(course)){
+                    exist = true;
+                    break;
+                }
+            }
         }
+        return exist;
     }
 
     @Override
@@ -132,4 +146,5 @@ public class Student {
     public int hashCode() {
         return Objects.hash(studentId, name, email, address);
     }
+
 }

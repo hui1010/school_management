@@ -1,6 +1,5 @@
 package se.lexikon.group_30.modelTest;
 
-import com.sun.org.apache.xml.internal.utils.Hashtree2Node;
 import org.junit.Before;
 import org.junit.Test;
 import se.lexikon.group_30.model.Course;
@@ -17,6 +16,7 @@ public class StudentTest {
     private Student stu1 = new Student(1, "Tom", "tom@test.com", "växjö");
     private Student stu2 = new Student(2,"Jerry", "jerry@test.com", "växjö");
     private Student stu3 = new Student(3, "Elsa", "elsa@test.com", "kalmar");
+
     private Course c1 = new Course(1, "Math", LocalDate.parse("2020-08-24"), 16);
     private Course c2 = new Course(2, "Swedish", LocalDate.parse("2020-08-21"), 16);
     private Course c3 = new Course(3, "Music", LocalDate.parse("2020-09-01"), 8);
